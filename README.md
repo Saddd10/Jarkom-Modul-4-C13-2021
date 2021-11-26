@@ -10,6 +10,6 @@
 
 ## Soal
 
-![img](./img/topologi.png)
+![img](./img/topologi1.png)
 
 Dengan menggunakan topologi jaringan di atas akan dilakukan perhitungan subnet dengan menggunakan 2 buah metode, yaitu VLSM (Variable Length Subnet Masking) dan CIDR (Classless Inter Domain Routing)
