@@ -328,9 +328,13 @@ Dilakukan perhitungan Network ID dan Broadcast Address, didapatkan :
 
 ![image](https://github.com/Saddd10/Jarkom-Modul-4-C13-2021/blob/main/img/gns3.png)
 
+Pada semua node selain router FOOSHA tambahkan `echo nameserver 192.168.122.1 > /etc/resolv.conf` sebagai ip milik foosha
+
 ### Konfigurasi IP
 
 #### Router
+
+Pada semua router lakukan perubahan dalam file `vim /etc/sysctl.conf` uncomment perintah `net.ipv4.ip_forward=1`
 
 - **FOOSHA**
 ```
@@ -621,3 +625,64 @@ iface eth0 inet static
 	netmask 255.255.252.0
 	gateway 192.190.128.1
 ```
+
+Pada router FOOSHA tambahkan perintah `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.190.0.0/16`
+
+### Routing
+
+Buat file dengan nama `route.sh` pada setiap router untuk mencegah routing hilang ketika gns3 direstart dan tambahkan command berikut
+
+- **FOOSHA**
+```
+route add -net 192.190.8.0 netmask 255.255.255.128 gw 192.190.36.2
+route add -net 192.190.0.0 netmask 255.255.248.0 gw 192.190.36.2
+route add -net 192.190.16.0 netmask 255.255.255.252 gw 192.190.36.2
+route add -net 192.190.32.0 netmask 255.255.252.0 gw 192.190.36.2
+route add -net 192.190.168.0 netmask 255.255.252.0 gw 192.190.164.2
+route add -net 192.190.160.0 netmask 255.255.254.0 gw 192.190.164.2
+route add -net 192.190.162.0 netmask 255.255.255.240 gw 192.190.164.2
+route add -net 192.190.144.0 netmask 255.255.255.252 gw 192.190.164.2
+route add -net 192.190.132.0 netmask 255.255.255.0 gw 192.190.164.2
+route add -net 192.190.128.0 netmask 255.255.252.0 gw 192.190.164.2
+route add -net 192.190.136.0 netmask 255.255.255.252 gw 192.190.164.2
+```
+
+- **WATER7**
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.190.36.1
+route add -net 192.190.8.0 netmask 255.255.255.128 gw 192.190.16.2
+route add -net 192.190.0.0 netmask 255.255.248.0 gw 192.190.16.2
+```
+
+- **PUCCI**
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.190.16.1
+```
+
+- **GUANHAO**
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.190.164.1
+route add -net 192.190.162.0 netmask 255.255.255.240 gw 192.190.160.3
+route add -net 192.190.132.0 netmask 255.255.255.0 gw 192.190.144.2
+route add -net 192.190.128.0 netmask 255.255.252.0 gw 192.190.144.2
+route add -net 192.190.136.0 netmask 255.255.255.252 gw 192.190.144.2
+```
+
+- **ALABASTA**
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.190.160.1
+```
+
+- **OIMO**
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.190.144.1
+route add -net 192.190.128.0 netmask 255.255.252.0 gw 192.190.132.3
+```
+
+- **SEASTONE**
+```
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.190.132.1
+```
+
+
+
