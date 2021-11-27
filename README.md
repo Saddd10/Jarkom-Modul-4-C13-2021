@@ -323,3 +323,301 @@ Setelah itu membuat Tree CIDR yang dapat dilihat pada gambar dibawah atau di lin
 Dilakukan perhitungan Network ID dan Broadcast Address, didapatkan :
 
 ![img](./img/NID-CIDR.png)
+
+### Topologi
+
+![image](https://github.com/Saddd10/Jarkom-Modul-4-C13-2021/blob/main/img/gns3.png)
+
+### Konfigurasi IP
+
+#### Router
+
+- **FOOSHA**
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+
+#A5
+auto eth1
+iface eth1 inet static
+	address 192.190.36.1
+	netmask 255.255.255.252
+
+#A6
+auto eth2
+iface eth2 inet static
+	address 192.190.64.1
+	netmask 255.255.252.0
+
+#A7
+auto eth3
+iface eth3 inet static
+	address 192.190.164.1
+	netmask 255.255.255.252
+
+#A15
+auto eth4
+iface eth4 inet static
+	address 192.190.192.1
+	netmask 255.255.252.252
+```
+
+- **WATER7**
+```
+auto lo
+iface lo inet loopback
+
+#A5
+auto eth0
+iface eth0 inet static
+	address 192.190.36.2
+	netmask 255.255.255.252
+        gateway 192.190.36.1
+
+#A3
+auto eth1
+iface eth1 inet static
+	address 192.190.16.1
+	netmask 255.255.255.252
+
+#A4
+auto eth2
+iface eth2 inet static
+	address 192.190.32.1
+	netmask 255.255.252.0
+
+```
+
+- **PUCCI**
+```
+auto lo
+iface lo inet loopback
+
+#A3
+auto eth0
+iface eth0 inet static
+	address 192.190.16.2
+	netmask 255.255.255.252
+        gateway 192.190.16.1
+
+#A1
+auto eth1
+iface eth1 inet static
+	address 192.190.8.1
+	netmask 255.255.255.128
+
+#A2
+auto eth2
+iface eth2 inet static
+	address 192.190.0.1
+	netmask 255.255.248.0
+```
+
+- **GUANHAO**
+```
+auto lo
+iface lo inet loopback
+
+#A7
+auto eth0
+iface eth0 inet static
+        address 192.190.164.2
+	netmask 255.255.255.252
+        gateway 192.190.164.1
+
+#A11
+auto eth1
+iface eth1 inet static
+	address 192.190.144.1
+	netmask 255.255.255.252
+
+#A8
+auto eth2
+iface eth2 inet static
+	address 192.190.168.1
+	netmask 255.255.252.0
+
+#A9
+auto eth3
+iface eth3 inet static
+	address 192.190.160.1
+	netmask 255.255.254.0
+
+```
+
+- **OIMO**
+```
+auto lo
+iface lo inet loopback
+
+#A11
+auto eth0
+iface eth0 inet static
+	address 192.190.144.2
+	netmask 255.255.255.252
+        gateway 192.190.144.1
+
+#A12
+auto eth1
+iface eth1 inet static
+	address 192.190.132.1
+	netmask 255.255.255.0
+
+#A14
+auto eth2
+iface eth2 inet static
+	address 192.190.136.1
+	netmask 255.255.255.252
+```
+
+- **ALABASTA**
+```
+auto lo
+iface lo inet loopback
+
+#A9
+auto eth0
+iface eth0 inet static
+	address 192.190.160.3
+	netmask 255.255.254.0
+        gateway 192.190.160.1
+
+#A10
+auto eth1
+iface eth1 inet static
+	address 192.190.162.1
+	netmask 255.255.255.240
+```
+
+- **SEASTONE**
+```
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+	address 192.190.132.3
+	netmask 255.255.255.0
+        gateway 192.190.132.1
+
+#A11
+auto eth1
+iface eth1 inet static
+	address 192.190.128.1
+	netmask 255.255.252.0
+```
+
+#### Server
+
+- **DORIKI**
+```
+auto eth0
+iface eth0 inet static
+	address 192.190.192.2
+	netmask 255.255.255.252
+	gateway 192.190.192.1
+```
+
+- **FUKUROU**
+```
+auto eth0
+iface eth0 inet static
+	address 192.190.136.2
+	netmask 255.255.255.252
+	gateway 192.190.136.1
+```
+
+#### Klien
+
+- **JIPANGU**
+```
+auto eth0
+iface eth0 inet static
+	address 192.190.8.2
+	netmask 255.255.255.128
+	gateway 192.190.8.1
+```
+
+- **CYPHER**
+```
+auto eth0
+iface eth0 inet static
+	address 192.190.32.2
+	netmask 255.255.252.0
+	gateway 192.190.32.1
+```
+
+- **COURTYARD**
+```
+auto eth0
+iface eth0 inet static
+	address 192.190.0.2
+	netmask 255.255.248.0
+	gateway 192.190.0.1
+```
+
+- **CALMBELT**
+```
+auto eth0
+iface eth0 inet static
+	address 192.190.0.3
+	netmask 255.255.248.0
+	gateway 192.190.0.1
+```
+
+- **BLUENO**
+```
+auto eth0
+iface eth0 inet static
+	address 192.190.64.2
+	netmask 255.255.252.0
+	gateway 192.190.64.1
+```
+
+- **JABRA**
+```
+auto eth0
+iface eth0 inet static
+	address 192.190.168.2
+	netmask 255.255.252.0
+	gateway 192.190.168.1
+```
+
+- **MAINGATE**
+```
+auto eth0
+iface eth0 inet static
+	address 192.190.160.2
+	netmask 255.255.254.0
+	gateway 192.190.160.1
+```
+
+- **JORGE**
+```
+auto eth0
+iface eth0 inet static
+	address 192.190.162.2
+	netmask 255.255.255.240
+	gateway 192.190.162.1
+```
+
+- **ENNIESLOBBY**
+```
+auto eth0
+iface eth0 inet static
+	address 192.190.132.2
+	netmask 255.255.255.0
+	gateway 192.190.132.1
+```
+
+- **ELENA**
+```
+auto eth0
+iface eth0 inet static
+	address 192.190.128.2
+	netmask 255.255.252.0
+	gateway 192.190.128.1
+```
