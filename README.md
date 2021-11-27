@@ -322,7 +322,7 @@ Setelah itu membuat Tree CIDR yang dapat dilihat pada gambar dibawah atau di lin
 
 Dilakukan perhitungan Network ID dan Broadcast Address, didapatkan :
 
-![img](./img/NID-CIDR.png)
+![img](./img/NID-CIDR-Revisi.PNG)
 
 ### Topologi
 
