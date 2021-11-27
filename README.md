@@ -686,7 +686,7 @@ route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.190.132.1
 
 ### Hasil
 
-- **Klien - my.its.ac.id
+- **Klien - my.its.ac.id**
 
 ![image](https://github.com/Saddd10/Jarkom-Modul-4-C13-2021/blob/main/img/klien%20myits.png)
 
