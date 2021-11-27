@@ -299,3 +299,26 @@ Berikut ringkasan untuk pengaturan routingnya
 Jika sudah menambahkan pengaturan untuk setiap router, kita bisa mencoba untuk mengirim paket untuk mengetesnya. Untuk testing kita akan mencoba untuk mengirim paket dari `Client Chiper` ke `Client Courtyard`. Percobaanya dapat dilihat dibawah ini.
 
 ![img](./img/testing.gif)
+
+## GNS3 - CIDR
+
+### Penggabungan Subnet
+
+Penggabungan subnet dilakukan dengan menggabungkan subnet yang letaknya paling jauh dari cloud terlebih dahulu seperti gambar dibawah ini:
+
+![image](https://user-images.githubusercontent.com/73766214/143665836-c88e7bab-8652-4ac4-b887-40144f39bf3f.png)
+
+![image](https://user-images.githubusercontent.com/73766214/143665852-2ae2bde7-4799-47b3-acc8-658bb1671e5d.png)
+
+![image](https://user-images.githubusercontent.com/73766214/143665864-e326586e-07de-49d6-8802-5569ee63013b.png)
+
+![image](https://user-images.githubusercontent.com/73766214/143665868-901de30c-001d-4cb2-a555-c02cf79bfff0.png)
+
+![image](https://user-images.githubusercontent.com/73766214/143665876-79588c3c-b56b-4356-ad08-41c53a81f244.png)
+
+Setelah itu membuat Tree CIDR yang dapat dilihat pada gambar dibawah atau di link berikut : https://gitmind.com/app/doc/2fc6169364
+
+![CIDR Revisi](https://user-images.githubusercontent.com/73766214/143665952-99786186-1c02-4b1f-87d5-6733205af3fc.png)
+
+Dilakukan perhitungan Network ID dan Broadcast Address, didapatkan :
+
