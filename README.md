@@ -684,5 +684,29 @@ route add -net 192.190.128.0 netmask 255.255.252.0 gw 192.190.132.3
 route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.190.132.1
 ```
 
+### Hasil
+
+- **Klien - my.its.ac.id
+
+![image](https://github.com/Saddd10/Jarkom-Modul-4-C13-2021/blob/main/img/klien%20myits.png)
+
+- **Klien ELENA - Klien CYPHER**
+
+![image](https://github.com/Saddd10/Jarkom-Modul-4-C13-2021/blob/main/img/klien%20elena%20-%20klien%20cypher.png)
+
+- **Klien JORGE - ROUTER PUCCI**
+
+![image](https://github.com/Saddd10/Jarkom-Modul-4-C13-2021/blob/main/img/klien%20jorge%20-%20router%20pucci.png)
+
+- **Klien ELENA - ROUTER FOOSHA**
+
+![image](https://github.com/Saddd10/Jarkom-Modul-4-C13-2021/blob/main/img/klien%20-%20cloud.png)
+
+- **Router SEASTONE - Router WATER7**
+
+![image](https://github.com/Saddd10/Jarkom-Modul-4-C13-2021/blob/main/img/router%20seastone%20-%20router%20water7.png)
 
 
+## KENDALA
+
+- Pembagian IP pada CIDR dan pemberian routing pada awalnya kurang benar
